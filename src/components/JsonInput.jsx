@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Trash2, Sparkles } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 
 function JsonInput({ onVisualize, onClear }) {
   const [txt, setTxt] = useState('');
@@ -8,10 +8,10 @@ function JsonInput({ onVisualize, onClear }) {
   const sampleJson = `{
   "user": {
     "id": 1,
-    "name": "John Doe",
+    "name": "Abhishek",
     "address": {
-      "city": "New York",
-      "country": "USA"
+      "city": "Mumbai",
+      "country": "India"
     }
   },
   "items": [
