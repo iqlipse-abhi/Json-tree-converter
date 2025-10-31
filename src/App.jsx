@@ -24,13 +24,6 @@ function App() {
     }
   }, [data]);
 
-  //  useEffect(() => {
-  //   if (data) {
-  //     const { nodes, edges } = parseJsonToNodes(data);
-  //     setTree({ nodes, edges });
-  //   }
-  // }, [data, node, edge]);
-
   const handleSearch = (searchPath) => {
     if (!searchPath.trim()) {
       setMsg('Please enter a search path');
@@ -57,15 +50,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gray-50">
+    <div className="min-h-screen w-full bg-gray-50 dark:bg-gray-900">
       <ThemeToggle theme={theme} onToggle={toggleTheme} />
       
       <div className="max-w-screen-2xl mx-auto px-6 py-6">
         <div className="text-center mb-6">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
             JSON to tree converter
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-400">
             Convert your JSON data in tree format
           </p>
         </div>
@@ -83,8 +76,8 @@ function App() {
                 {msg && (
                   <div className={`p-3 rounded-lg font-medium ${
                     msg.includes('found!') 
-                      ? 'bg-green-100 text-green-700' 
-                      : 'bg-red-100 text-red-700'
+                      ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
+                      : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
                   }`}>
                     {msg}
                   </div>
@@ -99,16 +92,16 @@ function App() {
                 </ReactFlowProvider>
               </div>
             ) : (
-              <div className="bg-white rounded-lg shadow-lg p-12 text-center border border-gray-200">
-                <div className="text-gray-400 mb-4">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-12 text-center border border-gray-200 dark:border-gray-700">
+                <div className="text-gray-400 dark:text-gray-500 mb-4">
                   <svg className="w-20 h-20 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">
+                <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   No JSON data yet
                 </h3>
-                <p className="text-gray-500">
+                <p className="text-gray-500 dark:text-gray-400">
                   Enter JSON and click "Generate Tree"
                 </p>
               </div>

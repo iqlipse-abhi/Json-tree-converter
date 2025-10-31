@@ -15,6 +15,7 @@ function TreeView({ nodes, edges, highlightedNode }) {
   const [edgs, setEdgs, onEdgesChg] = useEdgesState(edges);
   const { setCenter } = useReactFlow();
 
+  // tried solid lines first but dotted looks better
   // useEffect(() => {
   //   const styledEdges = edges.map(edge => ({
   //     ...edge,
@@ -75,7 +76,7 @@ function TreeView({ nodes, edges, highlightedNode }) {
 
   return (
     <div
-      className="bg-white rounded-lg shadow-lg border-2 border-gray-300"
+      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg border-2 border-gray-300 dark:border-gray-700"
       style={{ height: "700px" }}
     >
       <ReactFlow
